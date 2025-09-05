@@ -8,13 +8,13 @@ intents.guilds = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-WELCOME_CHANNEL_ID = CHANNEL_ID_HERE  # vaihda tähän serverisi welcome-kanavan ID
+WELCOME_CHANNEL_ID = CHANNEL_ID_HERE  
 
 invites_cache = {}
 
 @bot.event
 async def on_ready():
-    print(f"Botti käynnistynyt nimellä {bot.user}")
+    print(f"BOT ONLINE {bot.user}")
     for guild in bot.guilds:
         invites = await guild.invites()
         invites_cache[guild.id] = {invite.code: invite.uses for invite in invites}
